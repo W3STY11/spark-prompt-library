@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Prompt | Spark AI Prompt Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+  <!-- Compact Header - Zero wasted space -->
+  <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+    <div class="container mx-auto px-6">
+      <div class="flex justify-between items-center h-14">
+        <a href="/" class="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white">
+          <span class="text-xl">⚡</span>
+          <span>Spark AI Prompt Library</span>
+        </a>
+        <nav class="flex items-center gap-6">
+          <a href="/" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-semibold text-sm">Home</a>
+          <a href="/browse.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-semibold text-sm">Browse</a>
+          <a href="/favorites.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-semibold text-sm">Favorites</a>
+          <button id="darkModeToggle" class="p-1 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 text-lg">
+            <span class="dark:hidden">🌙</span>
+            <span class="hidden dark:inline">☀️</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content - Optimized spacing -->
+  <main class="container mx-auto px-6 py-6 max-w-5xl">
+    <div id="loadingState" class="text-center py-12">
+      <div class="spinner mx-auto mb-4"></div>
+      <p class="text-gray-600 dark:text-gray-400">Loading prompt...</p>
+    </div>
+
+    <div id="promptContent" class="hidden">
+      <!-- Prompt Header -->
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-6 mb-4">
+        <div class="flex items-start justify-between gap-4 mb-3">
+          <div class="flex items-start gap-3 flex-1 min-w-0">
+            <span id="promptIcon" class="text-4xl"></span>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-2">
+                <span id="promptDepartment" class="badge badge-primary text-xs"></span>
+                <span id="promptComplexity" class="badge text-xs"></span>
+              </div>
+              <h1 id="promptTitle" class="text-3xl font-extrabold text-gray-900 dark:text-white mb-2"></h1>
+              <p id="promptSubcategory" class="text-gray-600 dark:text-gray-400 font-semibold text-sm"></p>
+            </div>
+          </div>
+          <button id="favoriteBtn" class="text-3xl hover:scale-110 transition-transform" title="Add to favorites">
+            <span id="favoriteIcon">☆</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Description - Compact -->
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-4 mb-4">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-2">About</h2>
+        <p id="promptDescription" class="text-gray-700 dark:text-gray-300 leading-relaxed"></p>
+      </div>
+
+      <!-- Main Prompt - Zero wasted space -->
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-4 mb-4">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-lg font-bold text-gray-900 dark:text-white">Prompt</h2>
+          <button id="copyBtn" class="btn-primary text-sm px-4 py-2">
+            📋 Copy
+          </button>
+        </div>
+        <div class="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-4 overflow-x-auto">
+          <pre id="promptText" class="text-sm text-gray-800 dark:text-gray-200 font-mono leading-relaxed whitespace-pre-wrap"></pre>
+        </div>
+      </div>
+
+      <!-- Tips - Compact -->
+      <div id="tipsSection" class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-4 mb-4 hidden">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Tips</h2>
+        <ul id="promptTips" class="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+          <!-- Tips loaded by JS -->
+        </ul>
+      </div>
+
+      <!-- Tags -->
+      <div id="tagsSection" class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-4 mb-4 hidden">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Tags</h2>
+        <div id="promptTags" class="flex flex-wrap gap-2">
+          <!-- Tags loaded by JS -->
+        </div>
+      </div>
+
+      <!-- Images -->
+      <div id="imagesSection" class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl p-4 mb-4 hidden">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Examples</h2>
+        <div id="promptImages" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Images loaded by JS -->
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="flex items-center justify-between gap-4 mt-6">
+        <button id="prevBtn" class="btn-secondary flex items-center gap-2">
+          ← Previous
+        </button>
+        <a href="/browse.html" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 font-semibold text-sm">
+          Back to Browse
+        </a>
+        <button id="nextBtn" class="btn-secondary flex items-center gap-2">
+          Next →
+        </button>
+      </div>
+    </div>
+
+    <!-- Error State -->
+    <div id="errorState" class="hidden text-center py-12">
+      <div class="text-6xl mb-4">⚠️</div>
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Prompt Not Found</h2>
+      <p class="text-gray-600 dark:text-gray-400 mb-6">The requested prompt could not be loaded</p>
+      <a href="/browse.html" class="btn-primary">
+        Browse All Prompts
+      </a>
+    </div>
+  </main>
+
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/view.js"></script>
+</body>
+</html>

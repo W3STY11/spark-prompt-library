@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorites | Spark AI Prompt Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+    <div class="container mx-auto px-6">
+      <div class="flex justify-between items-center h-16">
+        <a href="/" class="flex items-center gap-3 text-xl font-bold text-gray-900 dark:text-white">
+          <span class="text-2xl">⚡</span>
+          <span>Spark AI Prompt Library</span>
+        </a>
+        <nav class="flex items-center gap-8">
+          <a href="/" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-semibold">Home</a>
+          <a href="/browse.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-semibold">Browse</a>
+          <a href="/favorites.html" class="text-primary-600 dark:text-primary-400 font-semibold">Favorites</a>
+          <button id="darkModeToggle" class="p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 text-xl">
+            <span class="dark:hidden">🌙</span>
+            <span class="hidden dark:inline">☀️</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <section class="py-12">
+    <div class="container mx-auto px-6">
+      <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-8">Your Favorites</h1>
+
+      <div id="favoritesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Loading state -->
+        <div class="col-span-full text-center py-12">
+          <div class="spinner mx-auto mb-4"></div>
+          <p class="text-gray-600 dark:text-gray-400">Loading favorites...</p>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="hidden text-center py-12">
+        <div class="text-6xl mb-4">⭐</div>
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">No favorites yet</h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">Start adding prompts to your favorites to access them quickly</p>
+        <a href="/browse.html" class="btn-primary">
+          Browse Prompts
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative bg-gradient-to-b from-gray-900 to-gray-950 text-white py-12 border-t border-gray-800 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <!-- Top Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <!-- Brand -->
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-3xl">⚡</span>
+              <span class="text-xl font-bold">Spark AI</span>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              Curated prompts for every business need. Clean, tested, ready to use.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-4">Quick Links</h4>
+            <nav class="space-y-3">
+              <a href="/" class="block text-gray-300 hover:text-primary-400 transition-colors">Home</a>
+              <a href="/browse.html" class="block text-gray-300 hover:text-primary-400 transition-colors">Browse Prompts</a>
+              <a href="/favorites.html" class="block text-gray-300 hover:text-primary-400 transition-colors">Favorites</a>
+            </nav>
+          </div>
+
+          <!-- Stats -->
+          <div>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-4">Our Library</h4>
+            <div class="flex items-baseline gap-3 mb-2">
+              <div class="text-4xl font-bold text-white">2000+</div>
+              <div class="text-gray-400">Prompts</div>
+            </div>
+            <div class="flex items-baseline gap-3 mb-2">
+              <div class="text-2xl font-bold text-white">9</div>
+              <div class="text-gray-400">Departments</div>
+            </div>
+            <div class="flex items-baseline gap-3">
+              <div class="text-2xl font-bold text-white">100%</div>
+              <div class="text-gray-400">Tested</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="pt-6 border-t border-gray-800">
+          <div class="text-center text-sm text-gray-400">
+            <p>© 2025 Spark AI Prompt Library. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/favorites.js"></script>
+</body>
+</html>
