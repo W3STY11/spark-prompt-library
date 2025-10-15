@@ -295,6 +295,19 @@ const departmentIcons = {
 // PROMPT CRUD OPERATIONS
 // =============================================================================
 
+// GET /api/prompts - Fetch all prompts (public access, no auth required)
+app.get('/api/prompts', async (req, res) => {
+  try {
+    const indexPath = path.join(__dirname, '../public/prompts_index.json');
+    const indexData = await fs.readFile(indexPath, 'utf-8');
+    const index = JSON.parse(indexData);
+    res.json(index);
+  } catch (error) {
+    console.error('Error loading prompts:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // POST /api/prompts - Create new prompt (no auth needed - public can submit)
 app.post('/api/prompts', upload.single('image'), async (req, res) => {
   try {
