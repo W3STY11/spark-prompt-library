@@ -47,16 +47,22 @@
 ### Installation
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/W3STY11/spark-prompt-library.git
 cd spark-prompt-library
 
-# (Optional) Change admin password
-nano .env  # Edit ADMIN_PASSWORD
+# 2. (Optional but RECOMMENDED) Set custom admin password
+cp .env.example .env
+nano .env  # Edit ADMIN_PASSWORD (default: YourSecurePasswordHere)
 
-# Start the application
+# 3. Start the application
 docker-compose up -d
+
+# First startup takes 2-3 minutes to build containers
+# Watch the logs: docker-compose logs -f
 ```
+
+**Note:** If you skip step 2, the default password from `.env.example` will be used.
 
 ### Access Points
 

@@ -23,7 +23,9 @@ RUN npm ci --only=production
 
 # Copy server code
 COPY server ./server
-COPY .env ./.env
+
+# Copy .env.example as default config (users can override via volume mount)
+COPY .env.example ./.env
 
 # Copy public folder with all 2,376 prompts
 COPY public ./public
