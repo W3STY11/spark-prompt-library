@@ -21,7 +21,8 @@ export function initDarkMode() {
 // Load prompts index
 export async function loadPromptsIndex() {
   try {
-    const response = await fetch('/prompts_index.json');
+    // Load from API to get real-time updates
+    const response = await fetch('http://localhost:3001/api/prompts');
     if (!response.ok) throw new Error('Failed to load prompts index');
     return await response.json();
   } catch (error) {
