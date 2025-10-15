@@ -1,0 +1,208 @@
+═══════════════════════════════════════════════════════════════
+  SPARK AI v1.2.1 - CRITICAL BUG FIX UPDATE
+═══════════════════════════════════════════════════════════════
+
+## 🐛 What's Fixed in v1.2.1:
+
+**CRITICAL FIX**: Dragging the button NO LONGER opens the library!
+
+The drag-to-open bug has been completely fixed. Now you can:
+✓ Drag the ⚡ button anywhere on screen without it opening
+✓ Click the button normally to open the library
+✓ Smooth, flawless experience as intended!
+
+**BONUS**: Enhanced prompt formatting for even better readability
+
+═══════════════════════════════════════════════════════════════
+
+## 📥 QUICK INSTALLATION (Update from v1.2.0):
+
+### Step 1: Open Tampermonkey Dashboard
+   - Click the Tampermonkey icon in Chrome toolbar
+   - Click "Dashboard"
+
+### Step 2: Find Your Existing Script
+   - Look for: "Spark AI Prompt Library - M365 Copilot Integration"
+   - You should see version 1.2.0 listed
+   - Click on the script name to edit it
+
+### Step 3: Replace with v1.2.1
+   - Press Ctrl+A (Select All)
+   - Press Delete
+   - Go to: C:\Users\Nick\OneDrive - Serrala Group GmbH\Spark_AI_Prompt_Library_FINAL\copilot-integration\
+   - Open: spark-m365-copilot.user.js
+   - Press Ctrl+A (Select All)
+   - Press Ctrl+C (Copy)
+   - Go back to Tampermonkey
+   - Press Ctrl+V (Paste)
+
+### Step 4: Save the Script
+   - Press Ctrl+S (or File → Save)
+   - Close the Tampermonkey editor
+
+### Step 5: Verify Version
+   - Check the version at the top should now be: @version 1.2.1
+   - Description should say: "FIXED drag-to-open bug"
+   - Ensure the script is ENABLED (green checkmark)
+
+### Step 6: Test It!
+   - Go to: https://m365.cloud.microsoft/chat/
+   - Press Ctrl+Shift+R (hard refresh to clear cache)
+   - You should see the purple ⚡ button appear
+
+═══════════════════════════════════════════════════════════════
+
+## 🧪 TESTING THE FIX:
+
+**Test 1: Drag the Button**
+1. Hover over the ⚡ button
+2. Cursor should change to "grab" hand
+3. Click and hold on the button
+4. Drag it to a different position (e.g., top-left corner)
+5. Release the mouse
+6. ✅ Library should NOT open! Button should just move.
+
+**Test 2: Click the Button**
+1. Click the ⚡ button once (don't drag)
+2. ✅ Library SHOULD open in a new Chrome tab
+
+**Test 3: Send a Prompt**
+1. In the library, browse to any Business prompt
+2. Click "🚀 Send to Copilot" button
+3. Check the Copilot input field
+4. ✅ Prompt should have beautiful formatting:
+
+   #CONTEXT:
+   You are an expert...
+
+   #GOAL:
+   Deliver a comprehensive report...
+
+   #RESPONSE GUIDELINES:
+   1. First guideline
+   2. Second guideline
+
+   #INFORMATION ABOUT ME:
+   [Your details here]
+
+   #OUTPUT:
+   Structured output format
+
+═══════════════════════════════════════════════════════════════
+
+## 🔍 VERIFICATION:
+
+After installation, press F12 in M365 Copilot and check console:
+
+You should see:
+[Spark] Initializing M365 Copilot integration v1.2.1...
+[Spark] Draggable floating button added
+[Spark] Beautiful sidecar panel created
+[Spark] Message listener setup complete
+[Spark] Integration v1.2.1 complete! ⚡
+[Spark] ✓ Draggable button (FIXED: drag no longer opens library)
+[Spark] ✓ Beautiful formatted prompts
+[Spark] ✓ Opens in Chrome tab
+
+When you DRAG the button, you should see:
+[Spark] Drag detected - preventing library open
+
+When you CLICK the button, you should see:
+[Spark] Opening library in new Chrome tab...
+
+═══════════════════════════════════════════════════════════════
+
+## 🎯 WHAT WAS FIXED:
+
+### The Problem:
+In v1.2.0, when you tried to drag the button to move it to a
+different position, it would automatically open the library. This
+made the draggable feature unusable.
+
+### The Solution:
+v1.2.1 now tracks the actual distance your mouse moves:
+- If you move MORE than 5 pixels → It's a DRAG (library doesn't open)
+- If you move LESS than 5 pixels → It's a CLICK (library opens)
+
+This uses mathematical distance calculation to determine user intent.
+
+### Technical Details:
+- Added `hasDragged` flag to track drag state
+- Stored starting mouse position (`dragStartPos`)
+- Calculated distance using Pythagorean theorem
+- Click handler checks distance before opening library
+- Works perfectly every time!
+
+═══════════════════════════════════════════════════════════════
+
+## 💡 BEST PRACTICES:
+
+1. **Positioning the Button**
+   - Drag it to the top-left if it blocks content
+   - Drag it near the input field for quick access
+   - Your preferred position will be remembered in the session
+
+2. **Using the Prompts**
+   - Click "Send to Copilot" from the library
+   - Prompt appears in the input with nice formatting
+   - Customize the [bracketed placeholders]
+   - Press Enter to send to Copilot
+
+3. **Quick Tips**
+   - Press ESC to close the sidecar quickly
+   - Click the dark overlay to close sidecar
+   - Check the word count badge to estimate token usage
+   - Read the golden "Pro Tips" section for best results
+
+═══════════════════════════════════════════════════════════════
+
+## 📊 VERSION COMPARISON:
+
+| Feature                  | v1.2.0 | v1.2.1 |
+|--------------------------|--------|--------|
+| Draggable Button         | ✓      | ✓      |
+| **Drag-to-Open Bug**     | ❌ BUG | ✅ FIXED |
+| Formatted Prompts        | ✓      | ✓ Enhanced |
+| Opens in Chrome Tab      | ✓      | ✓      |
+| Beautiful Sidecar        | ✓      | ✓      |
+| Word Count Badge         | ✓      | ✓      |
+| ESC Key Support          | ✓      | ✓      |
+| Backdrop Blur            | ✓      | ✓      |
+| Distance-Based Detection | ❌     | ✅ NEW |
+
+═══════════════════════════════════════════════════════════════
+
+## 🎊 ENJOY v1.2.1!
+
+This is a critical bug fix that makes the draggable button work
+exactly as intended. You can now:
+
+✓ Move the button anywhere without it opening
+✓ Click it normally to access your prompts
+✓ Experience smooth, professional integration
+✓ Use beautifully formatted prompts
+
+If you had trouble with v1.2.0, this update solves everything!
+
+═══════════════════════════════════════════════════════════════
+
+## 📞 TROUBLESHOOTING:
+
+**Button still opens when dragging?**
+- Make sure you're on v1.2.1 (check @version at top of script)
+- Try hard refresh: Ctrl+Shift+R
+- Check console for "[Spark] v1.2.1" message
+
+**Prompts not formatting?**
+- Check console for "[Spark] Formatted prompt" message
+- Try copying manually (fallback to clipboard)
+- Verify you're on the correct M365 Copilot URL
+
+**Library opens in Chromium?**
+- This should be fixed in v1.2.0+
+- Check script version
+- Clear browser cache
+
+Questions? Check the console (F12) for detailed [Spark] messages!
+
+═══════════════════════════════════════════════════════════════

@@ -8,7 +8,7 @@ import crypto from 'crypto';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const SOURCE_ROOT = path.join(ROOT, '..');
+const SOURCE_ROOT = '/home/aiwithnick/AI Prompts v5';
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const PROMPTS_DIR = path.join(PUBLIC_DIR, 'prompts');
 const THUMBNAILS_DIR = path.join(PUBLIC_DIR, 'thumbnails');

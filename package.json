@@ -3,12 +3,23 @@
   "version": "3.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node scripts/build-index.mjs && vite",
+    "dev": "vite",
+    "dev:rebuild": "node scripts/build-index.mjs && vite",
     "build": "node scripts/build-index.mjs && vite build",
-    "preview": "vite preview"
+    "build:quick": "vite build",
+    "preview": "vite preview",
+    "api": "node server/api.js",
+    "start": "npm run api & npm run dev:quick"
   },
   "dependencies": {
+    "canvas": "^3.2.0",
     "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "form-data": "^4.0.4",
+    "multer": "^2.0.2",
+    "node-fetch": "^3.3.2",
     "sharp": "^0.33.0"
   },
   "devDependencies": {

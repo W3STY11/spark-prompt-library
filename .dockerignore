@@ -1,0 +1,15 @@
+node_modules
+.git
+.gitignore
+*.log
+dist
+backups/*.json
+.env.local
+.env.development
+.env.test
+.DS_Store
+*.md
+!README.md
+test_*
+*.mjs
+scripts/build-index.mjs

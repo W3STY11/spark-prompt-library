@@ -1,0 +1,84 @@
+{
+  "prompts": [
+    {
+      "title": "Develop Product Launch Campaign",
+      "description": "Create a comprehensive product launch campaign with multi-channel strategy",
+      "content": "#CONTEXT:\nYou are a product marketing manager planning a major product launch.\n\n#GOAL:\nDevelop a complete launch campaign that generates buzz and drives adoption.\n\n#RESPONSE GUIDELINES:\n1. Define product positioning and key messages\n2. Identify target audience segments\n3. Plan pre-launch, launch, and post-launch phases\n4. Select optimal marketing channels\n5. Create timeline with milestones\n6. Define success metrics\n\n#INFORMATION ABOUT ME:\n- My product: [PRODUCT NAME]\n- Launch date: [DATE]\n- Budget: [BUDGET]\n- Target market: [MARKET]\n- Key features: [FEATURES]\n\n#OUTPUT:\nProvide a detailed launch campaign plan with timeline, budget allocation, and success metrics.",
+      "department": "Marketing",
+      "tags": ["product-launch", "campaigns", "strategy"],
+      "complexity": "advanced"
+    },
+    {
+      "title": "Create Customer Persona Profiles",
+      "description": "Build detailed customer personas for targeted marketing",
+      "content": "#CONTEXT:\nYou are a marketing researcher creating customer personas.\n\n#GOAL:\nDevelop 3-5 detailed customer personas that guide marketing decisions.\n\n#RESPONSE GUIDELINES:\n1. Define demographic information\n2. Identify psychographic characteristics\n3. Map customer journey and pain points\n4. Describe goals and motivations\n5. List preferred communication channels\n6. Create persona narratives\n\n#INFORMATION ABOUT ME:\n- My product/service: [OFFERING]\n- My industry: [INDUSTRY]\n- My current customers: [DESCRIPTION]\n- My target market: [MARKET]\n\n#OUTPUT:\nProvide 3-5 detailed persona profiles with names, backgrounds, and characteristics.",
+      "department": "Marketing",
+      "tags": ["personas", "research", "targeting"],
+      "complexity": "intermediate"
+    },
+    {
+      "title": "Optimize Sales Call Scripts",
+      "description": "Create effective sales call scripts that close deals",
+      "content": "#CONTEXT:\nYou are a sales trainer developing call scripts for sales reps.\n\n#GOAL:\nCreate scripts for cold calls, warm leads, and follow-ups that maximize conversion.\n\n#RESPONSE GUIDELINES:\n1. Write opening statements that grab attention\n2. Include discovery questions\n3. Address common objections\n4. Present value propositions\n5. Close with clear calls-to-action\n6. Provide objection handling techniques\n\n#INFORMATION ABOUT ME:\n- My product/service: [OFFERING]\n- My target customer: [CUSTOMER TYPE]\n- Average deal size: [AMOUNT]\n- Sales cycle length: [DURATION]\n- Common objections: [OBJECTIONS]\n\n#OUTPUT:\nProvide complete scripts for 3 scenarios: cold call, warm lead follow-up, and closing call.",
+      "department": "Sales",
+      "tags": ["scripts", "cold-calling", "closing"],
+      "complexity": "intermediate"
+    },
+    {
+      "title": "Build Sales Territory Plan",
+      "description": "Develop strategic territory plans to maximize sales coverage",
+      "content": "#CONTEXT:\nYou are a sales operations manager designing territory plans.\n\n#GOAL:\nCreate optimized territory assignments that balance workload and maximize revenue.\n\n#RESPONSE GUIDELINES:\n1. Analyze geographic and market data\n2. Define territory boundaries\n3. Calculate territory potential\n4. Assign resources and quotas\n5. Plan coverage strategy\n6. Set performance metrics\n\n#INFORMATION ABOUT ME:\n- My sales team size: [NUMBER]\n- My market areas: [REGIONS]\n- My product mix: [PRODUCTS]\n- My revenue targets: [TARGETS]\n- My customer base: [DESCRIPTION]\n\n#OUTPUT:\nProvide territory assignments, coverage plans, and quota allocations.",
+      "department": "Sales",
+      "tags": ["territory", "planning", "operations"],
+      "complexity": "advanced"
+    },
+    {
+      "title": "Analyze Sales Pipeline Health",
+      "description": "Evaluate pipeline health and forecast accuracy",
+      "content": "#CONTEXT:\nYou are a sales analyst reviewing pipeline metrics.\n\n#GOAL:\nAnalyze pipeline health and provide recommendations for improvement.\n\n#RESPONSE GUIDELINES:\n1. Calculate key pipeline metrics\n2. Identify bottlenecks and leakage\n3. Assess deal velocity and conversion rates\n4. Review forecast accuracy\n5. Benchmark against targets\n6. Recommend actions\n\n#INFORMATION ABOUT ME:\n- My pipeline value: [VALUE]\n- My quota: [QUOTA]\n- My average deal size: [SIZE]\n- My win rate: [RATE]\n- My sales cycle: [DAYS]\n\n#OUTPUT:\nProvide pipeline analysis with visualizations and actionable recommendations.",
+      "department": "Sales",
+      "tags": ["pipeline", "analysis", "forecasting"],
+      "complexity": "advanced"
+    },
+    {
+      "title": "Create Financial Dashboard",
+      "description": "Design executive financial dashboards for decision-making",
+      "content": "#CONTEXT:\nYou are a financial analyst creating executive dashboards.\n\n#GOAL:\nDesign comprehensive dashboards that provide real-time financial insights.\n\n#RESPONSE GUIDELINES:\n1. Identify key financial metrics\n2. Design dashboard layout and visualizations\n3. Define data sources and refresh frequency\n4. Create drill-down capabilities\n5. Set up alerts and thresholds\n6. Document KPI definitions\n\n#INFORMATION ABOUT ME:\n- My business type: [TYPE]\n- My reporting needs: [NEEDS]\n- My data sources: [SOURCES]\n- My key stakeholders: [STAKEHOLDERS]\n- My decision timeframes: [TIMEFRAMES]\n\n#OUTPUT:\nProvide dashboard design with metrics, visualizations, and implementation plan.",
+      "department": "Finance",
+      "tags": ["dashboards", "reporting", "analytics"],
+      "complexity": "intermediate"
+    },
+    {
+      "title": "Perform Break-Even Analysis",
+      "description": "Calculate break-even points and profit scenarios",
+      "content": "#CONTEXT:\nYou are a financial planner conducting break-even analysis.\n\n#GOAL:\nAnalyze break-even points and create profit scenarios for business decisions.\n\n#RESPONSE GUIDELINES:\n1. Identify fixed and variable costs\n2. Calculate contribution margin\n3. Determine break-even point\n4. Create scenario analysis\n5. Assess sensitivity to changes\n6. Provide recommendations\n\n#INFORMATION ABOUT ME:\n- My product/service: [OFFERING]\n- My fixed costs: [COSTS]\n- My variable costs: [COSTS]\n- My pricing: [PRICE]\n- My volume expectations: [VOLUME]\n\n#OUTPUT:\nProvide break-even analysis with charts and scenario comparisons.",
+      "department": "Finance",
+      "tags": ["analysis", "planning", "profitability"],
+      "complexity": "beginner"
+    },
+    {
+      "title": "Develop Strategic Business Plan",
+      "description": "Create comprehensive strategic plans for business growth",
+      "content": "#CONTEXT:\nYou are a strategy consultant developing a business plan.\n\n#GOAL:\nCreate a strategic business plan that drives growth and competitive advantage.\n\n#RESPONSE GUIDELINES:\n1. Conduct market and competitive analysis\n2. Define vision, mission, and values\n3. Set strategic objectives and goals\n4. Develop growth strategies\n5. Create implementation roadmap\n6. Define success metrics\n\n#INFORMATION ABOUT ME:\n- My business: [DESCRIPTION]\n- My industry: [INDUSTRY]\n- My current position: [POSITION]\n- My growth targets: [TARGETS]\n- My resources: [RESOURCES]\n\n#OUTPUT:\nProvide a complete strategic business plan with timelines and milestones.",
+      "department": "Business",
+      "tags": ["strategy", "planning", "growth"],
+      "complexity": "advanced"
+    },
+    {
+      "title": "Conduct SWOT Analysis",
+      "description": "Perform comprehensive SWOT analysis for strategic planning",
+      "content": "#CONTEXT:\nYou are a business analyst conducting a SWOT analysis.\n\n#GOAL:\nIdentify strengths, weaknesses, opportunities, and threats to inform strategy.\n\n#RESPONSE GUIDELINES:\n1. Analyze internal strengths and capabilities\n2. Identify weaknesses and gaps\n3. Explore market opportunities\n4. Assess competitive threats\n5. Prioritize findings\n6. Develop strategic recommendations\n\n#INFORMATION ABOUT ME:\n- My business: [BUSINESS]\n- My market: [MARKET]\n- My competitors: [COMPETITORS]\n- My goals: [GOALS]\n- My timeframe: [TIMEFRAME]\n\n#OUTPUT:\nProvide detailed SWOT analysis with prioritized action items.",
+      "department": "Business",
+      "tags": ["swot", "analysis", "strategy"],
+      "complexity": "beginner"
+    },
+    {
+      "title": "Optimize Business Processes",
+      "description": "Identify and eliminate inefficiencies in business operations",
+      "content": "#CONTEXT:\nYou are a process improvement consultant analyzing business operations.\n\n#GOAL:\nOptimize business processes to increase efficiency and reduce costs.\n\n#RESPONSE GUIDELINES:\n1. Map current processes\n2. Identify bottlenecks and inefficiencies\n3. Benchmark against best practices\n4. Design improved processes\n5. Calculate ROI of improvements\n6. Create implementation plan\n\n#INFORMATION ABOUT ME:\n- My processes: [PROCESSES]\n- My pain points: [ISSUES]\n- My resources: [RESOURCES]\n- My constraints: [CONSTRAINTS]\n- My goals: [GOALS]\n\n#OUTPUT:\nProvide process maps, improvement recommendations, and implementation roadmap.",
+      "department": "Business",
+      "tags": ["processes", "optimization", "efficiency"],
+      "complexity": "intermediate"
+    }
+  ]
+}

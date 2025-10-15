@@ -121,6 +121,52 @@
     border-color: #818cf8;
   }
 
+  /* View Toggle Buttons */
+  .view-toggle-btn {
+    @apply p-2 rounded-md transition-all;
+    color: #6b7280;
+  }
+
+  .view-toggle-btn:hover {
+    background-color: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+  }
+
+  .view-toggle-btn.active {
+    background-color: #ffffff;
+    color: #6366f1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .view-toggle-btn:hover {
+    background-color: rgba(129, 140, 248, 0.15);
+    color: #818cf8;
+  }
+
+  .dark .view-toggle-btn.active {
+    background-color: #374151;
+    color: #818cf8;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Prompt List Item (for list view) */
+  .prompt-list-item {
+    @apply bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700
+           rounded-xl p-4 cursor-pointer relative overflow-hidden;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .prompt-list-item:hover {
+    transform: translateX(4px);
+    background-color: #f9fafb;
+    border-color: rgba(99, 102, 241, 0.3);
+  }
+
+  .dark .prompt-list-item:hover {
+    background-color: #1f2937;
+    border-color: rgba(129, 140, 248, 0.3);
+  }
+
   /* Badge */
   .badge {
     @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-sm font-semibold;

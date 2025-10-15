@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Favorites | Spark AI Prompt Library</title>
+  <title>Favorites | SPARK Prompt Library</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
       <div class="flex justify-between items-center h-16">
         <a href="/" class="flex items-center gap-3 text-xl font-bold text-gray-900 dark:text-white">
           <span class="text-2xl">⚡</span>
-          <span>Spark AI Prompt Library</span>
+          <span>SPARK Prompt Library</span>
         </a>
         <nav class="flex items-center gap-8">
           <a href="/" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-semibold">Home</a>
@@ -34,6 +34,16 @@
   <!-- Main Content -->
   <section class="py-12">
     <div class="container mx-auto px-6">
+      <!-- Back Button -->
+      <div class="mb-4">
+        <button onclick="history.back()" class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 font-semibold transition-colors group">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transform group-hover:-translate-x-1 transition-transform">
+            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to Home
+        </button>
+      </div>
+
       <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-8">Your Favorites</h1>
 
       <div id="favoritesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -66,7 +76,10 @@
           <div>
             <div class="flex items-center gap-3 mb-4">
               <span class="text-3xl">⚡</span>
-              <span class="text-xl font-bold">Spark AI</span>
+              <div>
+                <div class="text-xl font-bold">SPARK</div>
+                <div class="text-xs text-gray-500 mt-1">Serrala Program for AI Research & Knowledge</div>
+              </div>
             </div>
             <p class="text-gray-400 leading-relaxed">
               Curated prompts for every business need. Clean, tested, ready to use.
@@ -104,7 +117,7 @@
         <!-- Bottom Section -->
         <div class="pt-6 border-t border-gray-800">
           <div class="text-center text-sm text-gray-400">
-            <p>© 2025 Spark AI Prompt Library. All rights reserved.</p>
+            <p>© 2025 SPARK Serrala Program for AI Research & Knowledge. All rights reserved.</p>
           </div>
         </div>
       </div>

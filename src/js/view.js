@@ -30,6 +30,7 @@ async function init() {
 
   // Event listeners
   document.getElementById('copyBtn').addEventListener('click', handleCopy);
+  document.getElementById('sendToCopilotBtn').addEventListener('click', handleSendToCopilot);
   document.getElementById('favoriteBtn').addEventListener('click', handleFavorite);
   document.getElementById('prevBtn').addEventListener('click', goToPrevious);
   document.getElementById('nextBtn').addEventListener('click', goToNext);
@@ -119,6 +120,66 @@ function handleCopy() {
   const content = currentPrompt.content;
   const button = document.getElementById('copyBtn');
   copyToClipboard(content, button);
+}
+
+function handleSendToCopilot() {
+  const button = document.getElementById('sendToCopilotBtn');
+  const originalText = button.innerHTML;
+
+  try {
+    // Prepare the message data
+    const messageData = {
+      type: 'SPARK_SEND_TO_COPILOT',
+      promptText: currentPrompt.content,
+      promptDetails: {
+        id: currentPrompt.id,
+        title: currentPrompt.title,
+        icon: currentPrompt.icon,
+        department: currentPrompt.department,
+        subcategory: currentPrompt.subcategory,
+        description: currentPrompt.description,
+        complexity: currentPrompt.complexity,
+        tips: currentPrompt.tips || [],
+        tags: currentPrompt.tags || [],
+        images: currentPrompt.images || [],
+        word_count: currentPrompt.word_count
+      }
+    };
+
+    // Try to find Copilot window
+    // First check if we were opened by Copilot (window.opener)
+    if (window.opener && !window.opener.closed) {
+      window.opener.postMessage(messageData, 'https://m365.cloud.microsoft');
+      button.innerHTML = '✓ Sent!';
+      button.classList.add('bg-green-600');
+      setTimeout(() => {
+        button.innerHTML = originalText;
+        button.classList.remove('bg-green-600');
+      }, 2000);
+    } else {
+      // Fallback: try to broadcast to all windows (for manual tab opening)
+      // This won't work across origins, but we'll try
+      // Show instruction to user
+      button.innerHTML = '⚠️ Open from Copilot first';
+      setTimeout(() => {
+        button.innerHTML = originalText;
+      }, 3000);
+
+      // Also copy to clipboard as fallback
+      copyToClipboard(currentPrompt.content, button);
+
+      // Show helpful message
+      setTimeout(() => {
+        alert('Tip: Click the ⚡ button in Copilot Chat to open this library, then prompts will be sent automatically!');
+      }, 100);
+    }
+  } catch (error) {
+    console.error('Error sending to Copilot:', error);
+    button.innerHTML = '❌ Error';
+    setTimeout(() => {
+      button.innerHTML = originalText;
+    }, 2000);
+  }
 }
 
 function handleFavorite() {
