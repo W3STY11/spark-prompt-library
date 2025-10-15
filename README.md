@@ -184,6 +184,21 @@ BACKUP_RETENTION_DAYS=30
 MAX_BACKUPS=100
 ```
 
+### Changing Password After Setup
+
+If you need to change the admin password after containers are already running:
+
+```bash
+# 1. Edit the .env file
+nano .env  # Change ADMIN_PASSWORD
+
+# 2. Restart containers to apply changes
+docker-compose down && docker-compose up -d
+
+# Note: 'docker-compose restart' won't work for .env changes
+# You must use 'down' then 'up' to apply new environment variables
+```
+
 ### Port Configuration
 
 Edit `docker-compose.yml` to change ports:
