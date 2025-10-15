@@ -49,7 +49,8 @@ function getAuthHeaders() {
 async function loadPrompts() {
   showLoading(true);
   try {
-    const response = await fetch('/prompts_index.json');
+    // Load from API to get real-time updates
+    const response = await fetch(`${API_URL}/api/prompts`);
     if (!response.ok) throw new Error('Failed to load prompts');
     const data = await response.json();
     allPrompts = data.prompts || [];
