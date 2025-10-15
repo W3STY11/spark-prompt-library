@@ -142,7 +142,7 @@ Shows: 2,376 prompts
 ### Test 3: Admin Dashboard
 ```
 Open: http://localhost:3003/admin-login.html
-Login with: SparkAdmin2024!
+Login with: [SET_IN_.ENV_FILE]
 Shows: 2,376 prompts in table
 ```
 

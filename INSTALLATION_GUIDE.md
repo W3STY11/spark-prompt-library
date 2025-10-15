@@ -98,7 +98,7 @@ http://localhost:3000/browse.html
 ```
 http://localhost:3000/admin-login.html
 ```
-→ Login with password: `SparkAdmin2024!`
+→ Login with password: `[SET_IN_.ENV_FILE]`
 
 ---
 
@@ -164,7 +164,7 @@ docker-compose up
 - Check both servers started successfully
 
 ### Can't login to admin:
-- Password: `SparkAdmin2024!`
+- Password: `[SET_IN_.ENV_FILE]`
 - Make sure you're at: `http://localhost:3000/admin-login.html`
 - Clear browser cookies and try again
 
@@ -189,7 +189,7 @@ Spark_AI_Prompt_Library_FINAL/
 
 ## 🔐 Admin Password
 
-**Default password:** `SparkAdmin2024!`
+**Default password:** `[SET_IN_.ENV_FILE]`
 
 **To change it:**
 1. Edit `.env` file
@@ -227,7 +227,7 @@ Spark_AI_Prompt_Library_FINAL/
 - [ ] Can open http://localhost:3000/browse.html
 - [ ] Can see all 2,376 prompts in browse library
 - [ ] Can login to admin at http://localhost:3000/admin-login.html
-- [ ] Admin password `SparkAdmin2024!` works
+- [ ] Admin password `[SET_IN_.ENV_FILE]` works
 - [ ] Can search, filter, and view prompts
 - [ ] Copilot button visible and working
 

@@ -20,7 +20,7 @@ http://localhost:3003/browse.html
 **Admin Dashboard (Protected)**
 ```
 http://localhost:3003/admin-login.html
-Password: SparkAdmin2024!
+Password: [SET_IN_.ENV_FILE]
 ```
 - View all 2,376 prompts in table
 - Edit any prompt
@@ -82,7 +82,7 @@ When you:
 - [x] Bulk select and delete
 - [x] Statistics dashboard
 - [x] Export to JSON
-- [x] Password protection (SparkAdmin2024!)
+- [x] Password protection ([SET_IN_.ENV_FILE])
 - [x] Automatic backups before edit/delete
 - [x] Manual backup button
 - [x] Data quality validation
@@ -104,7 +104,7 @@ When you:
 ### As an Admin:
 
 1. Open `http://localhost:3003/admin-login.html`
-2. Login with password: `SparkAdmin2024!`
+2. Login with password: `[SET_IN_.ENV_FILE]`
 3. See table of all 2,376 prompts
 4. Use search/filter to find specific prompts
 5. Click "Edit" to modify a prompt
@@ -211,7 +211,7 @@ Replace `public/prompts_index.json` with any backup file from `/backups/` folder
 
 ### Can't login to admin
 - Check `.env` file has correct password
-- Default: `SparkAdmin2024!`
+- Default: `[SET_IN_.ENV_FILE]`
 - Restart API server after changing
 
 ### Changes not appearing

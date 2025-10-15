@@ -63,7 +63,7 @@ docker-compose up -d
 | Interface | URL | Credentials |
 |-----------|-----|-------------|
 | **Browse Library** | http://localhost:3000/browse.html | No auth required |
-| **Admin Dashboard** | http://localhost:3000/admin-login.html | `SparkAdmin2024!` |
+| **Admin Dashboard** | http://localhost:3000/admin-login.html | Set in `.env` file |
 
 ---
 
@@ -167,7 +167,7 @@ Edit `.env` file:
 
 ```env
 # Admin password (CHANGE THIS!)
-ADMIN_PASSWORD=SparkAdmin2024!
+ADMIN_PASSWORD=YourSecurePasswordHere
 
 # Server configuration
 NODE_ENV=production
@@ -309,7 +309,7 @@ docker-compose up -d
 
 ### Admin login fails
 - Check password in `.env` file
-- Default is `SparkAdmin2024!`
+- Copy `.env.example` to `.env` and set your password
 - Clear browser cache
 
 ### Prompts not showing
