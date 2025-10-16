@@ -787,6 +787,114 @@ h3, .h3 {
   }
 }
 
+/* Dark Mode Support for Manual Toggle */
+.dark {
+  --spark-glass-bg: rgba(0, 0, 0, 0.7);
+  --spark-glass-border: rgba(255, 255, 255, 0.1);
+}
+
+.dark .department-card-premium,
+.dark .prompt-card-premium {
+  background: var(--spark-neutral-800);
+  border-color: var(--spark-neutral-700);
+}
+
+.dark .btn-premium {
+  box-shadow: var(--shadow-xl);
+}
+
+.dark .input-premium {
+  background: var(--spark-neutral-800);
+  border-color: var(--spark-neutral-700);
+  color: white;
+}
+
+/* Dark Mode Badge Styles - Critical Fix for Visibility */
+.dark .badge-business,
+.dark [class*="badge-business"] {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(96, 165, 250, 0.2));
+  color: #60a5fa !important; /* Bright blue for dark mode */
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.dark .badge-marketing,
+.dark [class*="badge-marketing"] {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(244, 114, 182, 0.2));
+  color: #f472b6 !important; /* Bright pink for dark mode */
+  border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+.dark .badge-sales,
+.dark [class*="badge-sales"] {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(52, 211, 153, 0.2));
+  color: #34d399 !important; /* Bright green for dark mode */
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.dark .badge-seo,
+.dark [class*="badge-seo"] {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(167, 139, 250, 0.2));
+  color: #a78bfa !important; /* Bright purple for dark mode */
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.dark .badge-finance,
+.dark [class*="badge-finance"] {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(251, 191, 36, 0.2));
+  color: #fbbf24 !important; /* Bright amber for dark mode */
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.dark .badge-education,
+.dark [class*="badge-education"] {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(34, 211, 238, 0.2));
+  color: #22d3ee !important; /* Bright cyan for dark mode */
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.dark .badge-writing,
+.dark [class*="badge-writing"] {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(248, 113, 113, 0.2));
+  color: #f87171 !important; /* Bright red for dark mode */
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.dark .badge-productivity,
+.dark [class*="badge-productivity"] {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(251, 146, 60, 0.2));
+  color: #fb923c !important; /* Bright orange for dark mode */
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.dark .badge-solopreneurs,
+.dark [class*="badge-solopreneurs"] {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(196, 181, 253, 0.2));
+  color: #c4b5fd !important; /* Bright violet for dark mode */
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* Generic badge styles for dark mode */
+.dark .badge,
+.dark .badge-primary,
+.dark .tag {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(196, 181, 253, 0.2));
+  color: #c4b5fd !important;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* Ensure text-blue classes are visible in dark mode */
+.dark .text-blue-800 {
+  color: #60a5fa !important;
+}
+
+.dark .text-blue-700 {
+  color: #60a5fa !important;
+}
+
+.dark .text-blue-600 {
+  color: #60a5fa !important;
+}
+
 /* ========================================
    14. ACCESSIBILITY IMPROVEMENTS
    ======================================== */
@@ -837,4 +945,103 @@ h3, .h3 {
 
 /* ========================================
    END OF ENHANCED STYLES
-   ======================================== */
+   ======================================== *//* Dark Mode Badge Fix - Dark backgrounds for badges */
+
+/* Business badges in dark mode - dark purple background */
+.dark .badge-business,
+.dark [class*="badge-business"] {
+  background-color: #4c1d95 !important; /* Dark purple */
+  color: #e9d5ff !important; /* Light purple text */
+  border: 1px solid #6b21a8 !important;
+}
+
+/* Marketing badges in dark mode - dark orange background */
+.dark .badge-marketing,
+.dark [class*="badge-marketing"] {
+  background-color: #7c2d12 !important; /* Dark orange */
+  color: #fed7aa !important; /* Light orange text */
+  border: 1px solid #9a3412 !important;
+}
+
+/* Sales badges in dark mode - dark green background */
+.dark .badge-sales,
+.dark [class*="badge-sales"] {
+  background-color: #14532d !important; /* Dark green */
+  color: #bbf7d0 !important; /* Light green text */
+  border: 1px solid #166534 !important;
+}
+
+/* SEO badges in dark mode - dark blue background */
+.dark .badge-seo,
+.dark [class*="badge-seo"] {
+  background-color: #1e3a8a !important; /* Dark blue */
+  color: #bfdbfe !important; /* Light blue text */
+  border: 1px solid #1e40af !important;
+}
+
+/* Finance badges in dark mode - dark teal background */
+.dark .badge-finance,
+.dark [class*="badge-finance"] {
+  background-color: #134e4a !important; /* Dark teal */
+  color: #99f6e4 !important; /* Light teal text */
+  border: 1px solid #0f766e !important;
+}
+
+/* Education badges in dark mode - dark pink background */
+.dark .badge-education,
+.dark [class*="badge-education"] {
+  background-color: #831843 !important; /* Dark pink */
+  color: #fbcfe8 !important; /* Light pink text */
+  border: 1px solid #9f1239 !important;
+}
+
+/* Writing badges in dark mode - dark indigo background */
+.dark .badge-writing,
+.dark [class*="badge-writing"] {
+  background-color: #312e81 !important; /* Dark indigo */
+  color: #c7d2fe !important; /* Light indigo text */
+  border: 1px solid #4338ca !important;
+}
+
+/* Productivity badges in dark mode - dark yellow background */
+.dark .badge-productivity,
+.dark [class*="badge-productivity"] {
+  background-color: #713f12 !important; /* Dark amber */
+  color: #fde68a !important; /* Light yellow text */
+  border: 1px solid #92400e !important;
+}
+
+/* Solopreneurs badges in dark mode - dark purple background */
+.dark .badge-solopreneurs,
+.dark [class*="badge-solopreneurs"] {
+  background-color: #581c87 !important; /* Dark purple */
+  color: #e9d5ff !important; /* Light purple text */
+  border: 1px solid #6b21a8 !important;
+}
+
+/* Generic badge styles for dark mode */
+.dark .badge,
+.dark [class*="badge"] {
+  background-color: #374151 !important; /* Dark gray background */
+  color: #f3f4f6 !important; /* Light gray text */
+  border: 1px solid #4b5563 !important;
+}
+
+/* Ensure all badges in dark mode have proper visibility */
+.dark .prompt-card .badge,
+.dark .prompt-list-item .badge,
+.dark .prompt-item .badge {
+  opacity: 1 !important;
+  font-weight: 500 !important;
+}
+/* Fix for bottom tags on prompt cards - make them highly visible in dark mode */
+.dark .px-3.py-1.bg-gray-100,
+.dark .px-3.py-1.bg-gray-100.dark\:bg-gray-700,
+.dark .shimmer,
+.dark span.px-3.py-1 {
+  background-color: #4c1d95 !important; /* Dark purple background */
+  color: #e9d5ff !important; /* Light purple text */
+  border: 1px solid #6b21a8 !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+}

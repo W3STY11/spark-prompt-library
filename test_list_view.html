@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List View Test</title>
+</head>
+<body>
+    <h1>Testing List View Display Order</h1>
+    <p>This test verifies that the department badge appears BEFORE the title in list view.</p>
+
+    <h2>Expected Order:</h2>
+    <ol>
+        <li>Department badge (e.g., "Business", "Marketing")</li>
+        <li>Title of the prompt</li>
+    </ol>
+
+    <h2>Test Results:</h2>
+    <div id="results"></div>
+
+    <script>
+        // Fetch and test the browse page
+        fetch('http://localhost:3002/browse.html')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+
+                // Check for list view elements
+                const listItems = doc.querySelectorAll('.prompt-list-item');
+                const results = document.getElementById('results');
+
+                if (listItems.length > 0) {
+                    results.innerHTML = '<p style="color: green;">✓ List view elements found</p>';
+
+                    // Check the order of elements
+                    const firstItem = listItems[0];
+                    const flexContainer = firstItem.querySelector('.flex.items-center.gap-3');
+
+                    if (flexContainer) {
+                        const children = flexContainer.children;
+                        if (children.length >= 2) {
+                            const firstElement = children[0];
+                            const secondElement = children[1];
+
+                            const isDepartmentFirst = firstElement.classList.contains('badge');
+                            const isTitleSecond = secondElement.tagName === 'H3';
+
+                            if (isDepartmentFirst && isTitleSecond) {
+                                results.innerHTML += '<p style="color: green;">✓ CORRECT: Department appears BEFORE title!</p>';
+                                results.innerHTML += `<p>First element: ${firstElement.textContent} (badge)</p>`;
+                                results.innerHTML += `<p>Second element: ${secondElement.textContent} (title)</p>`;
+                            } else {
+                                results.innerHTML += '<p style="color: red;">✗ INCORRECT: Order is wrong</p>';
+                            }
+                        }
+                    }
+                } else {
+                    results.innerHTML = '<p style="color: orange;">No list view items found - page may need to be in list view mode</p>';
+                }
+
+                // Also test the actual JavaScript behavior
+                results.innerHTML += '<h3>JavaScript Check:</h3>';
+                results.innerHTML += '<p>Now checking the actual rendered order via API...</p>';
+
+                fetch('http://localhost:3001/api/prompts')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.prompts && data.prompts.length > 0) {
+                            const prompt = data.prompts[0];
+                            results.innerHTML += `<p>Sample prompt department: ${prompt.department}</p>`;
+                            results.innerHTML += `<p>Sample prompt title: ${prompt.title}</p>`;
+                            results.innerHTML += '<p style="color: green;">✓ API data structure confirmed</p>';
+                        }
+                    });
+            })
+            .catch(error => {
+                document.getElementById('results').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            });
+    </script>
+</body>
+</html>
