@@ -10,18 +10,18 @@
 :root {
   /* ==================== COLOR SYSTEM ==================== */
 
-  /* Primary Brand Colors - Electric Purple Gradient */
-  --spark-primary-50: #faf5ff;
-  --spark-primary-100: #f3e8ff;
-  --spark-primary-200: #e9d5ff;
-  --spark-primary-300: #d8b4fe;
-  --spark-primary-400: #c084fc;
-  --spark-primary-500: #a855f7;
-  --spark-primary-600: #9333ea;
-  --spark-primary-700: #7e22ce;
-  --spark-primary-800: #6b21a8;
-  --spark-primary-900: #581c87;
-  --spark-primary-950: #3b0764;
+  /* Primary Brand Colors - Microsoft Blue */
+  --spark-primary-50: #e6f2ff;
+  --spark-primary-100: #b3d9ff;
+  --spark-primary-200: #80c1ff;
+  --spark-primary-300: #4da8ff;
+  --spark-primary-400: #1a90ff;
+  --spark-primary-500: #0078d4;  /* PRIMARY Microsoft Blue */
+  --spark-primary-600: #005a9e;
+  --spark-primary-700: #004578;
+  --spark-primary-800: #003052;
+  --spark-primary-900: #001b2c;
+  --spark-primary-950: #001020;
 
   /* Accent Colors - Vibrant Blue */
   --spark-accent-50: #eff6ff;
@@ -48,13 +48,33 @@
   --spark-neutral-900: #18181b;
   --spark-neutral-950: #09090b;
 
-  /* Premium Gradients */
-  --spark-gradient-primary: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+  /* Premium Gradients - Microsoft Blue Theme */
+  --spark-gradient-primary: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
   --spark-gradient-accent: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-  --spark-gradient-vibrant: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+  --spark-gradient-vibrant: linear-gradient(135deg, #1a90ff 0%, #0078d4 100%);
   --spark-gradient-warm: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
-  --spark-gradient-cool: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  --spark-gradient-cool: linear-gradient(135deg, #06b6d4 0%, #0078d4 100%);
   --spark-gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+
+  /* Microsoft Fluent Background Gradient - MORE VISIBLE */
+  --spark-page-gradient: linear-gradient(135deg,
+    #e3f2fd 0%,     /* Light blue 50 */
+    #bbdefb 20%,    /* Light blue 100 */
+    #90caf9 40%,    /* Light blue 200 */
+    #e3f2fd 60%,    /* Light blue 50 */
+    #bbdefb 80%,    /* Light blue 100 */
+    #e3f2fd 100%    /* Light blue 50 */
+  );
+
+  /* Microsoft Fluent Dark Mode Background Gradient */
+  --spark-page-gradient-dark: linear-gradient(135deg,
+    #0d47a1 0%,     /* Dark blue 900 */
+    #1565c0 20%,    /* Dark blue 800 */
+    #1976d2 40%,    /* Dark blue 700 */
+    #0d47a1 60%,    /* Dark blue 900 */
+    #1565c0 80%,    /* Dark blue 800 */
+    #0d47a1 100%    /* Dark blue 900 */
+  );
 
   /* Glass Morphism Effects */
   --spark-glass-bg: rgba(255, 255, 255, 0.7);
@@ -74,10 +94,10 @@
 
   /* ==================== TYPOGRAPHY ==================== */
 
-  /* Font Families */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Plus Jakarta Sans', var(--font-primary);
-  --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace;
+  /* Font Families - Microsoft Segoe UI */
+  --font-primary: 'Segoe UI Variable', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Segoe UI Variable', 'Segoe UI', -apple-system, sans-serif;
+  --font-mono: 'Cascadia Code', 'Cascadia Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
 
   /* Font Sizes - Perfect Fourth Scale (1.333) */
   --text-xs: 0.75rem;     /* 12px */
@@ -98,11 +118,11 @@
   --font-bold: 700;
   --font-extrabold: 800;
 
-  /* Line Heights */
+  /* Line Heights - More spacious for readability */
   --leading-tight: 1.25;
   --leading-snug: 1.375;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.625;
+  --leading-normal: 1.6;      /* Increased for breathing room */
+  --leading-relaxed: 1.8;     /* More spacious */
   --leading-loose: 2;
 
   /* Letter Spacing */
@@ -180,6 +200,13 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--space-20);
+}
+
+/* Microsoft Fluent Page Background - Subtle gradient for glassmorphism */
+body {
+  background: var(--spark-page-gradient);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 /* Better Focus Outlines */
@@ -381,16 +408,33 @@ h3, .h3 {
   opacity: 1;
 }
 
-/* Premium Prompt Card */
+/* Premium Prompt Card - GLASSMORPHISM (Mica-style) */
 .prompt-card-premium {
   position: relative;
-  background: white;
+
+  /* Frosted glass background with Mica-style effect */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px) saturate(150%);
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+
   border-radius: var(--radius-xl);
   padding: var(--space-6);
-  border: 1px solid var(--spark-neutral-200);
+
+  /* Semi-transparent border with Microsoft blue accent */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-left: 4px solid var(--spark-primary-500);
+
+  /* Layered soft shadow (Microsoft Fluent style) */
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+
   transition: all var(--duration-normal) var(--ease-in-out);
   overflow: hidden;
+
+  /* GPU acceleration for smooth animations */
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
 }
 
 .prompt-card-premium::before {
@@ -407,9 +451,17 @@ h3, .h3 {
 }
 
 .prompt-card-premium:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--spark-primary-300);
+  /* Lift effect */
+  transform: translateY(-4px) translateZ(0);
+
+  /* Enhanced layered shadow */
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.12);
+
+  /* Brighter glass effect on hover */
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.5);
   border-left-color: var(--spark-primary-600);
 }
 
@@ -795,15 +847,37 @@ h3, .h3 {
   --spark-glass-border: rgba(255, 255, 255, 0.1);
 }
 
+/* Dark Mode Background Gradient */
+.dark body {
+  background: var(--spark-page-gradient-dark);
+  background-attachment: fixed;
+}
+
 .dark .department-card-premium,
 .dark .prompt-card-premium {
-  background: var(--spark-neutral-800);
-  border-color: var(--spark-neutral-700);
-  border-left-color: var(--spark-primary-400);
+  /* Dark glassmorphism effect */
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(8px) saturate(150%);
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid var(--spark-primary-400);
+
+  /* Enhanced dark mode shadow */
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dark .prompt-card-premium:hover {
+  /* Brighter glass on hover */
+  background: rgba(40, 40, 40, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
   border-left-color: var(--spark-primary-300);
+
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .dark .btn-premium {
