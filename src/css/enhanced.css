@@ -388,6 +388,7 @@ h3, .h3 {
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   border: 1px solid var(--spark-neutral-200);
+  border-left: 4px solid var(--spark-primary-500);
   transition: all var(--duration-normal) var(--ease-in-out);
   overflow: hidden;
 }
@@ -409,6 +410,7 @@ h3, .h3 {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
   border-color: var(--spark-primary-300);
+  border-left-color: var(--spark-primary-600);
 }
 
 .prompt-card-premium:hover::before {
@@ -797,6 +799,11 @@ h3, .h3 {
 .dark .prompt-card-premium {
   background: var(--spark-neutral-800);
   border-color: var(--spark-neutral-700);
+  border-left-color: var(--spark-primary-400);
+}
+
+.dark .prompt-card-premium:hover {
+  border-left-color: var(--spark-primary-300);
 }
 
 .dark .btn-premium {
