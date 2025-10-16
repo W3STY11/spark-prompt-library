@@ -250,7 +250,7 @@ function renderPrompts() {
           ${prompt.tags.length > 0 ? `
             <div class="flex flex-wrap gap-2 mb-5">
               ${prompt.tags.slice(0, 3).map(tag => `
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-lg font-medium shimmer">
+                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-100 text-xs rounded-lg font-medium border border-gray-200 dark:border-gray-600">
                   ${tag}
                 </span>
               `).join('')}
