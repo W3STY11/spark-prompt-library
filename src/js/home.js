@@ -22,13 +22,14 @@ function renderDepartments(departments) {
   const grid = document.getElementById('departmentsGrid');
   if (!grid) return;
 
-  grid.innerHTML = departments.map(dept => `
+  grid.innerHTML = departments.map((dept, index) => `
     <a href="/browse.html?department=${encodeURIComponent(dept.name)}"
-       class="department-card group animate-fade-in">
+       class="department-card department-card-premium group fade-in-up"
+       style="animation-delay: ${index * 100}ms; --dept-gradient: var(--dept-${dept.name.toLowerCase()}-gradient); --dept-bg: var(--dept-${dept.name.toLowerCase()}-bg); --dept-border: var(--dept-${dept.name.toLowerCase()}-border); --dept-color: var(--dept-${dept.name.toLowerCase()});">
       <div class="relative">
         <div class="flex items-center gap-5 mb-5">
-          <div class="text-6xl">${dept.icon}</div>
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors tracking-tight">
+          <div class="text-6xl transform group-hover:scale-110 transition-transform duration-300">${dept.icon}</div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-gradient transition-all tracking-tight">
             ${dept.name}
           </h3>
         </div>

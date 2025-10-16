@@ -197,17 +197,17 @@ function renderPrompts() {
   }
 
   if (viewMode === 'list') {
-    grid.innerHTML = pagePrompts.map(prompt => `
-      <a href="/view.html?id=${prompt.id}" class="prompt-list-item group animate-fade-in">
+    grid.innerHTML = pagePrompts.map((prompt, index) => `
+      <a href="/view.html?id=${prompt.id}" class="prompt-list-item group fade-in-up" style="animation-delay: ${index * 50}ms;">
         <div class="flex items-center gap-4">
-          <span class="text-3xl">${prompt.icon}</span>
+          <span class="text-3xl transform group-hover:scale-110 transition-transform">${prompt.icon}</span>
 
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-3 mb-1">
-              <span class="badge badge-primary text-xs flex-shrink-0">
+              <span class="badge badge-${prompt.department.toLowerCase()} badge-premium text-xs flex-shrink-0">
                 ${prompt.department}
               </span>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors truncate">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-gradient transition-all truncate">
                 ${prompt.title}
               </h3>
             </div>
@@ -228,16 +228,16 @@ function renderPrompts() {
     `).join('');
   } else {
     // Card view
-    grid.innerHTML = pagePrompts.map(prompt => `
-      <a href="/view.html?id=${prompt.id}" class="prompt-card group animate-fade-in">
+    grid.innerHTML = pagePrompts.map((prompt, index) => `
+      <a href="/view.html?id=${prompt.id}" class="prompt-card prompt-card-premium group fade-in-up" style="animation-delay: ${index * 100}ms;">
         <div class="relative">
           <div class="flex items-start gap-4 mb-4">
-            <span class="text-4xl">${prompt.icon}</span>
+            <span class="text-4xl transform group-hover:scale-110 transition-transform">${prompt.icon}</span>
             <div class="flex-1 min-w-0">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2 tracking-tight mb-2">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-gradient transition-all line-clamp-2 tracking-tight mb-2">
                 ${prompt.title}
               </h3>
-              <div class="badge badge-primary text-xs">
+              <div class="badge badge-${prompt.department.toLowerCase()} badge-premium text-xs">
                 ${prompt.department}
               </div>
             </div>
@@ -250,7 +250,7 @@ function renderPrompts() {
           ${prompt.tags.length > 0 ? `
             <div class="flex flex-wrap gap-2 mb-5">
               ${prompt.tags.slice(0, 3).map(tag => `
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-lg font-medium">
+                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-lg font-medium shimmer">
                   ${tag}
                 </span>
               `).join('')}
@@ -259,7 +259,7 @@ function renderPrompts() {
 
           <div class="flex items-center justify-between pt-5 border-t border-gray-200 dark:border-gray-700">
             <div class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 font-medium">
-              ${prompt.images.length > 0 ? '<span>📷</span>' : ''}
+              ${prompt.images.length > 0 ? '<span class="pulse">📷</span>' : ''}
               <span>${prompt.word_count} words</span>
             </div>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-primary-600 dark:text-primary-400 transform group-hover:translate-x-2 transition-transform">
