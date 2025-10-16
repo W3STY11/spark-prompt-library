@@ -169,17 +169,31 @@
 
   /* Badge */
   .badge {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-sm font-semibold;
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold;
   }
 
   .badge-primary {
     background-color: #e0e7ff;
     color: #4338ca;
+    font-size: 0.75rem; /* Consistent small size */
   }
 
   .dark .badge-primary {
     background-color: #312e81;
     color: #a5b4fc;
+  }
+
+  /* Prompt content formatting */
+  #promptText {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+    line-height: 1.6;
+  }
+
+  /* Fix prompt structure headers */
+  #promptText::first-line {
+    font-weight: bold;
   }
 
   .badge-success {

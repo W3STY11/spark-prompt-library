@@ -44,10 +44,10 @@ function renderPrompt() {
   document.getElementById('loadingState').classList.add('hidden');
   document.getElementById('promptContent').classList.remove('hidden');
 
-  // Header
+  // Header - Department first, then title
   document.getElementById('promptIcon').textContent = currentPrompt.icon;
-  document.getElementById('promptTitle').textContent = currentPrompt.title;
   document.getElementById('promptDepartment').textContent = currentPrompt.department;
+  document.getElementById('promptTitle').textContent = currentPrompt.title;
   document.getElementById('promptSubcategory').textContent = currentPrompt.subcategory || '';
 
   // Complexity badge

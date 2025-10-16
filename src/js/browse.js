@@ -204,12 +204,12 @@ function renderPrompts() {
 
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-3 mb-1">
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors truncate">
-                ${prompt.title}
-              </h3>
               <span class="badge badge-primary text-xs flex-shrink-0">
                 ${prompt.department}
               </span>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors truncate">
+                ${prompt.title}
+              </h3>
             </div>
             <p class="text-sm text-gray-600 dark:text-gray-400 truncate">
               ${truncate(prompt.description, 100)}
@@ -234,12 +234,12 @@ function renderPrompts() {
           <div class="flex items-start gap-4 mb-4">
             <span class="text-4xl">${prompt.icon}</span>
             <div class="flex-1 min-w-0">
-              <div class="badge badge-primary text-xs mb-2">
-                ${prompt.department}
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2 tracking-tight">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2 tracking-tight mb-2">
                 ${prompt.title}
               </h3>
+              <div class="badge badge-primary text-xs">
+                ${prompt.department}
+              </div>
             </div>
           </div>
 
